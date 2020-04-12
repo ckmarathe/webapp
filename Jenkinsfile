@@ -24,7 +24,7 @@ pipeline{
 			steps{
 				sshagent(['kubehost']) {
     				sh "scp -o StrictHostKeyChecking=no -rv helm vagrant@172.42.42.100:/home/vagrant/" 
-    				sh "helm upgrade --install webapp . -n ${STACK} --set=webapp1.tag=${STACK} -f values-${STACK}.yaml"
+    				sh "/usr/local/bin/helm upgrade --install webapp ./helm/ -n ${STACK} --set=webapp1.tag=${STACK} -f helm/values-${STACK}.yaml"
 				}
 			}
 		}

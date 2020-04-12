@@ -29,9 +29,6 @@ pipeline{
 					}
 			}
 		}
-		stage('Manual approval for UAT'){
-			input "Do you want to proceed for uat deplyment? "
-		}
 	}
 
 }

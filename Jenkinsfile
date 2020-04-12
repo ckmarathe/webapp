@@ -19,11 +19,11 @@ pipeline{
 		}
 		stage('Deploy on kubernetes dev env'){
 			environment{
-				STACK = "dev"	 
+				STACK = dev	 
 			}
 			steps{
 				sshagent(['kubehost']) {
-    				sh "scp -o StrictHostKeyChecking -rv helm vagrant@172.42.42.100:/home/vagrant/" 
+    				sh "scp -o StrictHostKeyChecking=no -rv helm vagrant@172.42.42.100:/home/vagrant/" 
     				// some block
 				}
 			}

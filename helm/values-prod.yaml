@@ -1,0 +1,10 @@
+webapp1:
+  containerName: webapp1
+  repository: chetanmarathe/webapp
+  tag: 1.0
+  pullPolicy: IfNotPresent
+  replicaCount: 1
+  service:
+    port: 80
+    containerport: 80 
+  stack: prodenv

@@ -19,12 +19,12 @@ pipeline{
 		}
 		stage('Deploy on kubernetes dev env'){
 			environment{
-				STACK = "dev" 
+				STACK = dev	 
 			}
 			steps{
 				sshagent(['kubehost']) {
     				sh "scp -o StrictHostKeyChecking=no -rv helm vagrant@172.42.42.100:/home/vagrant/" 
-    				// some block
+    				sh "helm upgrade --install webapp . -n ${STACK} --set=webapp1.tag=${STACK} -f values-${STACK}.yaml"
 				}
 			}
 		}

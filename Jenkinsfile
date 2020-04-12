@@ -19,7 +19,7 @@ pipeline{
 		}
 		stage('Deploy on kubernetes dev env'){
 			environment{
-				STACK = dev	 
+				STACK = "dev"	 
 			}
 			steps{
 				sshagent(['kubehost']) {

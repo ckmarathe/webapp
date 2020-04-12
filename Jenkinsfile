@@ -29,6 +29,9 @@ pipeline{
 					}
 			}
 		}
+		stage('Manual approval for UAT'){
+			input "Deploy to UAT? "
+		}
 	}
 
 }

@@ -17,7 +17,7 @@ pipeline{
 				}
 			}
 		}
-		stage('Deploy on kubernetes dev env'){
+		stage('Deploy on kubernetes DEV env'){
 			environment{
 				STACK = "dev"	 
 			}
@@ -34,7 +34,7 @@ pipeline{
 				input "Deploy to UAT?"
 			}
 		}
-		stage('Deploy on kubernetes dev env'){
+		stage('Deploy on kubernetes UAT env'){
 			environment{
 				STACK = "uat"	 
 			}

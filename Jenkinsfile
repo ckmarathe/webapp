@@ -30,7 +30,9 @@ pipeline{
 			}
 		}
 		stage('Manual approval for UAT'){
-			input "Deploy to UAT? "
+			steps{
+				input "Deploy to UAT?"
+			}
 		}
 	}
 

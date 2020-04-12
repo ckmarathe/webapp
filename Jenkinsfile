@@ -20,8 +20,6 @@ pipeline{
 		stage('Deploy on kubernetes dev env'){
 			Stack=dev
 			steps{
-				#sh "chmod +x changeTag.sh"
-				#sh "./changeTag.sh ${DOCKER_TAG}"
 				sshagent(['kubehost']) {
     				sh "scp -o StrictHostKeyChecking -rv helm vagrant@172.42.42.100:/home/vagrant/" 
     				// some block
